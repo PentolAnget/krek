@@ -259,7 +259,6 @@ class Crack:
 							    pass 
 						    else:
 							     pwx.append(depan+"123")
-					                         pwx.append(depan+"321")
 							         pwx.append(depan+"1234")
 							         pwx.append(depan+"12345")
 								 pwx.append("ganteng")
