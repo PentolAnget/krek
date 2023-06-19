@@ -385,14 +385,8 @@ class Crack:
 		print(f"\n [+] hasil OK disimpan ke : OK/{self.hari_ini}")
 		print(f" [+] hasil CP disimpan ke : CP/{self.hari_ini}")
 		print("\n [!] anda bisa mematikan data selular untuk menjeda proses crack\n")
-		
+
 if __name__=="__main__":
-	try:os.system("git pull")
-	except:pass
-	try:os.mkdir("OK")
-	except:pass
-	try:os.mkdir("CP")
-	except:pass
-	try:os.mkdir("data")
-	except:pass
-	Menu().menu()
+	#generate_ugent()
+	#print(generate_air())
+	Main().menu()
