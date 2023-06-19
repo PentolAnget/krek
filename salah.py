@@ -215,8 +215,6 @@ class Crack:
 				exit(" [!] kata sandi minimal 6 karakter")
 			print(f" [*] crack dengan sandi -> [{M}{','.join(x for x in pwx.split(','))}{N}]")
 			self.manual(pwx)
-		else:
-			self.otomatis()
 		
 	def manual(self,pw):
 		with ThreadPoolExecutor(max_workers=30) as fall:
