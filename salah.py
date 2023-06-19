@@ -240,8 +240,12 @@ class Crack:
 						fall.submit(self.metode_messenger,user,pwx)
 
 	def otomatis(self):
-		with ThreadPoolExecutor(max_workers=30) as fall:
-			self.simpan_hasil()
+		global prog,des
+		prog = Progress(TextColumn('{task.description}'),BarColumn(),TextColumn('{task.percentage:.0f}% ]'))
+		des = prog.add_task('',total=len(tampung))
+		with prog:
+			with ThreadPoolExecutor(max_workers=30) as fall:
+				self.simpan_hasil()
 				for data in tampung:
 					try:
 						pwx = []
