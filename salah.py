@@ -259,14 +259,16 @@ class Crack:
 							    pass 
 						    else:
 							     pwx.append(depan+"123")
+							     pwx.append(depan+"321")
 							     pwx.append(depan+"1234")
 							     pwx.append(depan+"12345")
 							     pwx.append("ganteng")
 							     pwx.append("sayangku")
+							     pwx.append("ganteng123")
 							     pwx.append("katasandi")
 							     pwx.append("pekalongan")
 							     pwx.append("semarang")
-						else:
+					 else:
 							if len(depan)<3:
 							     pwx.append(nama)
 							     pwx.append(nama+"123")
