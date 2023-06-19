@@ -240,12 +240,8 @@ class Crack:
 						fall.submit(self.metode_messenger,user,pwx)
 
 	def otomatis(self):
-		global prog,des
-		prog = Progress(TextColumn('{task.description}'),BarColumn(),TextColumn('{task.percentage:.0f}% ]'))
-		des = prog.add_task('',total=len(tampung))
-		with prog:
-			with ThreadPoolExecutor(max_workers=30) as fall:
-				self.simpan_hasil()
+		with ThreadPoolExecutor(max_workers=30) as fall:
+			self.simpan_hasil()
 				for data in tampung:
 					try:
 						pwx = []
@@ -387,6 +383,12 @@ class Crack:
 		print("\n [!] anda bisa mematikan data selular untuk menjeda proses crack\n")
 		
 if __name__=="__main__":
-	#generate_ugent()
-	#print(generate_air())
-	Main().menu()
+	try:os.system("git pull")
+	except:pass
+	try:os.mkdir("OK")
+	except:pass
+	try:os.mkdir("CP")
+	except:pass
+	try:os.mkdir("data")
+	except:pass
+	Menu().menu()
